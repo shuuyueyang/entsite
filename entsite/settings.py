@@ -19,7 +19,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # 图片储存根路径
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # 图片访问url
-MEDIA_URL = '/IMG/'
+MEDIA_URL = '/media/'
+CKEDITOR_UPLOAD_PATH = 'ckeditor_uploads'
 
 
 # Quick-start development settings - unsuitable for production
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'common.apps.CommonConfig',
     'ckeditor',
+    'ckeditor_uploader',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

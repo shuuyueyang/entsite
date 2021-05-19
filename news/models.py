@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import  RichTextUploadingField
 
 # Create your models here.
 # 企业站的新闻页
@@ -50,7 +51,7 @@ class News(MetaData, TimeStamped):
         
     avatar = models.ImageField(upload_to='news/%Y%m%d/', blank=True)
         
-    content = RichTextField()    #models.TextField(_('content'), blank=True)
+    content = RichTextUploadingField()#RichTextField()    #models.TextField(_('content'), blank=True)
     
     category = models.ForeignKey(Category, verbose_name = _('category'), on_delete=models.SET_NULL, null=True, blank=True,)
     
