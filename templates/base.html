@@ -42,10 +42,16 @@
     <div class="collapse navbar-collapse" id="navbarsExample09">
       <ul class="navbar-nav mr-auto">
         <li class="nav-pills active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{%url 'home:index'%}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-pills">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="{%url 'news:index'%}">News</a>
+        </li>
+		<li class="nav-pills">
+          <a class="nav-link" href="{%url 'about:index'%}">About</a>
+        </li>
+	    <li class="nav-pills">
+          <a class="nav-link" href="{%url 'products:index'%}">Products</a>
         </li>
         <li class="nav-pills">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>

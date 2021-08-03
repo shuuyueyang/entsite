@@ -5,6 +5,11 @@ from django.shortcuts import render
 
 from .models import News
 # ...
+def index(request):
+    context = {
+        'msg': 'hello news home',
+    }
+    return render(request, 'news/index.html', context)
 def detail(request, news_id):
     try:
         news = News.objects.get(pk=news_id)

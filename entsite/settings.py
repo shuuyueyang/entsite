@@ -39,6 +39,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
+    'products.apps.ProductsConfig',
+    'about.apps.AboutConfig',
     'news.apps.NewsConfig',
     'home.apps.HomeConfig',
     'common.apps.CommonConfig',
