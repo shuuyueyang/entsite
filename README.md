@@ -20,6 +20,8 @@
       setuptools      49.2.1
       sqlparse        0.4.1
       whitenoise      5.3.0
+* 2.4 python manage.py migrate
+* 2.5 python manage.py createsuperuser
 
 #### 三、开发命名规则
 * APP名称
