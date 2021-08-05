@@ -4,11 +4,11 @@
 
 #### 二、开发语言环境
 * Python 3.8.9
-* Django 
-* Bootstrap
+* Django 3.2.6
+* Bootstrap 4.6.0
 * JQuery
 * 2.1 虚拟环境命令：python -m venv entsite
-* 2.2 下载代码 
+* 2.2 下载代码：git clone https://github.com/shuuyueyang/entsite.git entsite_github
 
 #### 三、开发命名规则
 * APP名称
