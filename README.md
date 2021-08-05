@@ -3,11 +3,12 @@
 
 
 #### 二、开发语言环境
-* Python
-* Django
+* Python 3.8.9
+* Django 
 * Bootstrap
 * JQuery
-
+* 2.1 虚拟环境命令：python -m venv entsite
+* 2.2 下载代码 
 
 #### 三、开发命名规则
 * APP名称
