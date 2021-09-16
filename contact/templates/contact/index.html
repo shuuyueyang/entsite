@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block page-content %}
+<ul>{{ msg }}</ul>
+<form method="post" class="uniForm blueForms">
+{% csrf_token %}
+<button type="button"  class="btn btn-primary btn-sm" style="margin-bottom:5px;margin-right:8px;">在线留言</button>
+</form>
+{% endblock %}
