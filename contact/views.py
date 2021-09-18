@@ -1,4 +1,5 @@
 import json
+import re
 from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, View
 from django.shortcuts import HttpResponse,get_object_or_404
@@ -18,12 +19,14 @@ class OnlineMessageCreateView(CreateView):
     def post(self, request, *args, **kwargs):
         res = dict(result=False)
         form = self.get_form()
+        print(form)
         if form.is_valid():
             form.save()
             res['result'] = True
         else:
-            pattern = '<li>.*?<ul class=.*?><li>(.*?)</li>'
+            pattern = '<li>.*?<ul class=.*?><li>(.*?)</li></ul></li>'
             form_errors = str(form.errors)
             errors = re.findall(pattern, form_errors)
-            res['error'] = errors[0]
+            print(errors)
+            res['error'] = form_errors#errors[0]
         return HttpResponse(json.dumps(res), content_type='application/json')

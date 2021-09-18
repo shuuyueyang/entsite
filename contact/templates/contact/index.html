@@ -1,9 +1,30 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block page-content %}
 <ul>{{ msg }}</ul>
 <form method="post" class="uniForm blueForms">
 {% csrf_token %}
-<button type="button"  class="btn btn-primary btn-sm" style="margin-bottom:5px;margin-right:8px;">在线留言</button>
+<button type="button" id="btnLeaveMessage"  class="btn btn-primary btn-sm" style="margin-bottom:5px;margin-right:8px;">在线留言</button>
 </form>
+{% endblock %}
+{% block javascripts %}
+    <script src="{% static 'layer351/layer.js' %}"></script>
+	<script type="text/javascript">
+	    $(function () {
+		});
+		$("#btnLeaveMessage").click(function () {
+			layer.open({
+            type: 2,
+            title: '在线留言',
+            shadeClose: false,
+            maxmin: true,
+            area: ['800px', '300px'],
+            content: "{% url 'contact:OnlineMessageCreateView' %}",
+            end: function () {
+                //关闭时做的事情
+                //oDataTable.ajax.reload();
+            }
+            });
+        });
+	</script>
 {% endblock %}

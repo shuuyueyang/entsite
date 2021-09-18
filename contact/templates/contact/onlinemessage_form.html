@@ -50,13 +50,14 @@
                 cache: false,
                 success: function (msg) {
                     if (msg.result) {
-                        //layer.alert('数据保存成功！', {icon: 1}, function (index) {
-                         //   parent.layer.closeAll(); //关闭所有弹窗
-                        //});
-						alert("success");
+                        layer.alert('您已成功留言，我们会在近期与您联系，谢谢！', {icon:1,closeBtn:0,title:false}, function (index) {
+                            parent.layer.closeAll(); //关闭所有弹窗
+                        });
+						//alert("success");
                     } else {
-                        //layer.alert('数据保存失败', {icon: 5});
+                        layer.alert('数据保存失败', {icon: 5,closeBtn:0,title:false});
                         //$('errorMessage').html(msg.message)
+						//alert(msg.error);
                     }
                     return;
                 }
