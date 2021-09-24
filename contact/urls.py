@@ -7,4 +7,5 @@ app_name="contact"
 urlpatterns = [
     path('', views.index, name='index'),
     path('contact_create_message', views.OnlineMessageCreateView.as_view(), name='OnlineMessageCreateView'),
+    path('test_captcha', views.test_captcha, name='TestCaptcha'),
 ]

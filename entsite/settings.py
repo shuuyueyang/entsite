@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'common.apps.CommonConfig',
     'ckeditor',
+    'captcha',
     'ckeditor_uploader',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -147,3 +148,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # WhiteNoise : Add compression and caching support
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# CAPTCHA Settings
+CAPTCHA_IMAGE_SIZE = (80,45)
+CAPTCHA_TIMEOUT = 5
+CAPTCHA_LENGTH = 4

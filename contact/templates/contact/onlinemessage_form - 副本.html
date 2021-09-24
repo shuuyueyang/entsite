@@ -1,33 +1,43 @@
 {% extends "base_layer.html" %}
 
 {% block page-content %}
+
+<form action="{% url 'contact:OnlineMessageCreateView' %}" method="post">
+    {% csrf_token %}
+    用户：{{ form.name }} <span>{{ form.name.errors.0 }}</span> <br>
+    验证码：{{ form.captcha }} <span>{{ form.captcha.errors.0 }}</span><br>
+    <input type="submit">
+</form>
+
 <form class="form-horizontal" id="addForm" method="post">
 	{% csrf_token %}
 	<div class="box-body">
-		<!-- <fieldset> -->
-			<!-- <div class="form-group has-feedback"> -->
-				<!-- <label class="col-sm-2 control-label">姓名</label> -->
-				<!-- <div class="col-sm-8"> -->
-					<!-- <input class="form-control" name="name" type="text" /> -->
-				<!-- </div> -->
-			<!-- </div> -->
-			<!-- <div class="form-group has-feedback"> -->
-				<!-- <label class="col-sm-2 control-label">联系方式</label> -->
-				<!-- <div class="col-sm-8"> -->
-					<!-- <input class="form-control" name="phone" type="text" /> -->
-				<!-- </div> -->
-			<!-- </div> -->
-			<!-- <div class="form-group has-feedback"> -->
-				<!-- <label class="col-sm-2 control-label">留言</label> -->
-				<!-- <div class="col-sm-8"> -->
-					<!-- <input class="form-control" name="message" type="text" /> -->
-				<!-- </div> -->
-			<!-- </div> -->
-		<!-- </fieldset> -->
-    用户：{{ form.name }} <span>{{ form.name.errors.0 }}</span> <br>
-	联系方式：{{ form.phone }} <span>{{ form.name.errors.0 }}</span> <br>
-	留言：{{ form.message }} <span>{{ form.name.errors.0 }}</span> <br>
-    验证码：{{ form.captcha }} <span>{{ form.captcha.errors.0 }}</span><br>
+		<fieldset>
+			<div class="form-group has-feedback">
+				<label class="col-sm-2 control-label">姓名</label>
+				<div class="col-sm-8">
+					<input class="form-control" name="name" type="text" />
+				</div>
+			</div>
+			<div class="form-group has-feedback">
+				<label class="col-sm-2 control-label">联系方式</label>
+				<div class="col-sm-8">
+					<input class="form-control" name="phone" type="text" />
+				</div>
+			</div>
+			<div class="form-group has-feedback">
+				<label class="col-sm-2 control-label">留言</label>
+				<div class="col-sm-8">
+					<input class="form-control" name="message" type="text" />
+				</div>
+			</div>
+			<div class="form-group has-feedback">
+				<label class="col-sm-2 control-label">验证码</label>
+				<div class="col-sm-8">
+					<img src="/captcha/image/ea65b35a692cbf47718b80186c8666b2a2354fc0/" alt="captcha" class="captcha" />
+				</div>
+			</div>
+		</fieldset>
 	</div>
 	<div class="box-footer ">
 		<div class="row span7 text-center ">
@@ -42,8 +52,6 @@
 {% block javascript %}
     <script type="text/javascript">
         $("#btnSave").click(function () {
-		    // 清除所有Error Tag
-		    $("span[class='error-msg']").remove();
             var data = $("#addForm").serialize();
             $.ajax({
                 type: $("#addForm").attr('method'),
@@ -55,22 +63,13 @@
                         layer.alert('您已成功留言，我们会在近期与您联系，谢谢！', {icon:1,closeBtn:0,title:false}, function (index) {
                             parent.layer.closeAll(); //关闭所有弹窗
                         });
+						//alert("success");
                     } else {
-					    alert(msg.errors);
-						var error_objs=JSON.parse(msg.errors);
-						$.each(error_objs,function(idx,obj){
-							var tag = document.createElement('span');
-							tag.className = 'error-msg';
-							tag.innerHTML=obj[0].message;
-							$("input[name^="+idx+"][type='text']").after(tag);
-						});
-                        //layer.alert('数据保存失败', {icon: 5,closeBtn:0,title:false});
+                        layer.alert('数据保存失败', {icon: 5,closeBtn:0,title:false});
+                        //$('errorMessage').html(msg.message)
+						//alert(msg.error);
                     }
                     return;
-                },
-				error: function (msg) {
-				    console.log(msg);
-					return;
                 }
             });
         });

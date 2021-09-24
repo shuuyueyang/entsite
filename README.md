@@ -20,6 +20,7 @@
       setuptools      49.2.1
       sqlparse        0.4.1
       whitenoise      5.3.0
+	  django-simple-captcha  0.5.14
 * 2.4 python manage.py migrate
 * 2.5 python manage.py createsuperuser
 

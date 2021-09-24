@@ -1,0 +1,80 @@
+{% extends "base_layer.html" %}
+
+{% block page-content %}
+<form id="myForm" action="{% url 'contact:TestCaptcha' %}" method="post">
+    {% csrf_token %}
+    用户：{{ form.name }} <span>{{ form.name.errors.0 }}{{name_error}}</span> <br>
+	联系方式：{{ form.phone }} <span>{{ form.phone.errors.0 }}</span> <br>
+	留言：{{ form.message }} <span>{{ form.message.errors.0 }}</span> <br>
+    验证码：{{ form.captcha }} <span>{{ form.captcha.errors.0 }}</span><br>
+    <!-- <input type="submit"> -->
+	<button type="submit" id="btnSave" class="btn btn-info margin-right ">在线留言</button>
+</form>
+{% endblock %}
+{% block javascript %}
+<script  type="text/javascript">
+
+    $("#btnSave").on("click", function() {
+	    <!-- e.preventDefault();  -->
+		<!-- layer.msg('hello'); -->
+		<!-- layer.alert('您已成功留言，我们会在近期与您联系，谢谢！', {icon:1,closeBtn:0,title:false}, function (index) { -->
+                            <!-- parent.layer.closeAll(); //关闭所有弹窗 -->
+                        <!-- }); -->
+		<!-- $.post("{% url 'contact:TestCaptcha' %}", $("#myForm").serialize()) -->
+			<!-- .done(function(msg) {  -->
+			    
+			        <!-- if (msg.result) { -->
+				        <!-- //window.alert(msg.result);   -->
+                        
+						<!-- //alert("success"); -->
+                    <!-- } -->
+			<!-- }); -->
+			<!-- .fail(function() {  -->
+			<!-- window.alert("Submission failed!");  -->
+			<!-- }); -->
+	        var data = $("#myForm").serialize();
+            r = $.ajax({
+                type: $("#myForm").attr('method'),
+                url: "{% url 'contact:TestCaptcha' %}",
+                data: data,
+                cache: false,
+                success: function (result) {
+			      if (result.result) {
+				        alert("success");
+				        <!-- window.location = window.close(); -->
+                        layer.alert('数据保存成功', {icon: 5,closeBtn:0,title:false});
+					    <!-- window.alert(result.result); -->
+                        <!-- layer.alert('您已成功留言，我们会在近期与您联系，谢谢！', {icon:1,closeBtn:0,title:false}, function (index) { -->
+                            <!-- parent.layer.closeAll(); //关闭所有弹窗 -->
+                        <!-- }); -->
+						
+						//alert("success");
+                    } else {
+					    //alert(result.errors)
+                        //layer.alert('数据保存失败', {icon: 5,closeBtn:0,title:false});
+                        //$('errorMessage').html(msg.message)
+						//alert(msg.error);
+                    }
+                    <!-- return; -->
+                }
+            });
+
+					    
+    });
+     //点击刷新验证码
+    $(function () {
+        $('.captcha').css({
+            'cursor': 'pointer'
+        });
+        // ajax刷新
+        $('.captcha').click(function () {
+            console.log('click');
+            $.get("{% url 'captcha-refresh' %}",
+                function (result) {
+                    $('.captcha').attr('src', result['image_url']);
+                    $('#id_captcha_0').val(result['key'])
+                });
+        });
+    })
+    </script>
+{% endblock %}
