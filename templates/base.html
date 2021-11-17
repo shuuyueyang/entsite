@@ -4,8 +4,8 @@
 <head>
     <title>山月石网站系统</title>   
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
- <link href="{% static 'bootstrap460-dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css" /> 
- <link href="{% static 'bootstrap460-dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css" /> 
+    <link href="{% static 'bootstrap460-dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css" /> 
+    <link href="{% static 'sitestyles/site.css' %}" rel="stylesheet" type="text/css" /> 
    <!--	 <link href="{% static 'bootstrap-table/bootstrap-table.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'django_tables2/bootstrap.css' %}" rel="stylesheet" />
 	<link href="{% static 'jquery-ui-1.12.1/jquery-ui.css' %}" rel="stylesheet" type="text/css" /> 
@@ -32,49 +32,35 @@
 {% endblock%}
 {% block banner_part%}
 {% endblock%}
-<div class="container" style="margin-top:20px;">
-<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExample09">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-pills active">
-          <a class="nav-link" href="{%url 'home:index'%}">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-pills">
-          <a class="nav-link" href="{%url 'news:index'%}">News</a>
-        </li>
-		<li class="nav-pills">
-          <a class="nav-link" href="{%url 'about:index'%}">About</a>
-        </li>
-	    <li class="nav-pills">
-          <a class="nav-link" href="{%url 'products:index'%}">Products</a>
-        </li>
-		<li class="nav-pills">
-          <a class="nav-link" href="{%url 'contact:index'%}">Contact</a>
-        </li>
-        <li class="nav-pills">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-        <li class="nav-pills dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown09">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-md-0">
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-light bg-light rounded"> <!--   -->
+		<a class="navbar-brand" href="#">Navbar</a>
+		<ul class="nav nav-pills">
+			<li class="nav-item pill-1">
+				<a class="nav-link active" href="{%url 'home:index'%}">网站首页</a>
+			  </li>
+			  <li class="nav-item pill-1">
+				<a class="nav-link active" href="{%url 'about:index'%}">关于我们</a>
+			  </li>
+			  <li class="nav-item pill-2">
+				<a class="nav-link active" href="{%url 'products:index'%}">服务与产品</a>
+			  </li>
+			  <li class="nav-item pill-3">
+				<a class="nav-link active" href="{%url 'news:index'%}">新闻动态</a>
+			  </li>
+			  <li class="nav-item pill-3">
+				<a class="nav-link active" href="{%url 'contact:index'%}">联系我们</a>
+			  </li>
+			  <!-- <li class="nav-item pill-3"> -->
+				<!-- <a class="nav-link" href="#">人才招聘</a> -->
+			<!-- </li> -->
+		</ul>
+		<form class="form-inline my-2 my-md-0">
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
       </form>
-    </div>
   </nav>
-{% block page-content %}
-{% endblock %}	
+  {% block page-content %}
+  {% endblock %}	
 </div> 
 <div id="footer">
 {% block footer %}

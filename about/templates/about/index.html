@@ -1,5 +1,32 @@
 {% extends "base.html" %}
 
 {% block page-content %}
+<div class="location">
+	<div class="container">
+	<div style="margin-top:12px;">
+		<span>当前位置：</span><a>网站首页</a> > <a>关于我们</a> > <a>公司简介</a>
+	</div>
+	</div>
+</div>
 <ul>{{ msg|safe }}</ul>
+<div class="container submenu">
+	<div style="margin-top:15px;">
+		<ul>
+			<li class="on"><a href="#">公司简介</a></li>
+			<li><a href="#">领导致辞</a></li>
+			<li><a href="#">组织架构</a></li>
+			<li><a href="#">企业文化</a></li>		
+		</ul>
+	</div>
+</div>
+<div class="container page-conent">
+	<div class="page-title">
+		<div class="en">
+			about us
+		</div>
+		<div class="cn">
+			关于我们
+		</div>
+	</div>
+</div>
 {% endblock %}

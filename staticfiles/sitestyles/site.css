@@ -1,4 +1,80 @@
+
+body{
+	font-size: 16px;
+}
+a {text-decoration: none;color: #727272;}
+a,a:link{text-decoration:none;}
+a,a:visited{text-decoration:none;}
+a,a:hover{text-decoration:none;}
+a,a:active{text-decoration:none} 
+
+.nav-pills li {
+	#height: 15px;
+}
+.nav-pills .nav-link{
+	color: #333333;
+}
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
-    background-color: #d9d9d9;
+    font-weight: bold;
+	background-color: #b28147;
+	color: #ffffff;
+	border-radius: 5px;
+	vertical-align: middle;
+	height: 28px;
+	margin-top:6px;
+	padding-top:2px;
+}
+
+.site-banner{position: relative;}
+.site-banner img{width: 100%}
+/*
+.nav-pills .nav-link.active:after {
+position: absolute;bottom: -6px;left: 0;right: 0;margin: auto;display: block;content: '';width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 7px solid #b28147;
+}
+*/
+.location {
+    margin-bottom: 2.08%;
+    padding-bottom: 15px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #999999;
+    border-bottom: 1px solid #e0e0e0;
+}
+.location a {
+	margin-top:-4px;
+    display: inline-block;
+    color: #999999;
+    vertical-align: middle;
+}
+
+.submenu{margin-bottom: 3.12%;}
+.submenu ul{font-size: 0;padding-left:0;}
+.submenu ul li{display: inline-block;width: 220px;margin-right: 35px;}
+.submenu ul li:last-child{margin-right: 0;}
+.submenu ul li a{display: block;width: 100%;height: 52px;font-size: 16px;color: #333333;text-align: center;line-height: 48px;border: 2px solid #dcdcdc;box-sizing: border-box;}
+.submenu ul li.on a{border: 2px solid #b28147;font-weight: bold;color: #b28147;}
+.submenu ul li a:after{content: '+';padding-left: 30px;}
+
+
+.page-title{margin-bottom: 65px;}
+.page-title .en{font-size: 60px;color: #dadada;text-transform: uppercase;font-family: 'Impact';}
+.page-title .cn{margin-top: 20px;font-size: 36px;color: #333;}
+
+.page-text{font-size: 16px;color: #404040;line-height: 2;}
+.page-text p{text-indent: 2em;margin-bottom: 1%;}
+
+.about .img{position: relative;float: right;margin-left: 3.5%;margin-bottom: 3.5%;width: 46%;}
+.about .img img{position: relative;display: block;width: 95%;z-index: 3;}
+.about .img:after{position: relative;margin-left: auto;margin-top: -85%;display: block;content: '';width: 90%;padding-top: 90%;border: 2px solid #b28147;}
+footer {
+    margin-top: 5%;
+    padding: 1.82%;
+    background-color: #333;
+}
+footer .copyright {
+    float: none;
+    text-align: center;
+    line-height: 1.8;
+	color: #999;
 }
