@@ -2,6 +2,20 @@
 
 {% block page-content %}
 <ul>{{ msg|safe }}</ul>
+
+<ul>
+{% for i in categories %}
+<li>{{ i.name}}</li>
+{% endfor %}
+
+</ul>
+
+<ul>
+{% for j in news %}
+<li>{{ j.title}}</li>
+{% endfor %}
+</ul>
+
 {% endblock %}
 
 
