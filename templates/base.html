@@ -32,27 +32,28 @@
 {% endblock%}
 {% block banner_part%}
 {% endblock%}
+{{request.path|slice:'6'}}
 <div class="container">
     <nav class="navbar navbar-expand-md navbar-light bg-light rounded"> <!--   -->
 		<a class="navbar-brand" href="#">Navbar</a>
 		<ul class="nav nav-pills">
 			<li class="nav-item pill-1">
-				<a class="nav-link active" href="{%url 'home:index'%}">网站首页</a>
+				<a class="nav-link {% if request.path == '/' %} active{% endif %}"" href="{%url 'home:index'%}">网站首页</a>
 			  </li>
 			  <li class="nav-item pill-1">
-				<a class="nav-link active" href="{%url 'about:index'%}">关于我们</a>
+				<a class="nav-link {% if request.path|slice:'6' == '/about' %} active{% endif %}" href="{%url 'about:index'%}">关于我们</a>
 			  </li>
 			  <li class="nav-item pill-2">
-				<a class="nav-link active" href="{%url 'products:index'%}">服务与产品</a>
+				<a class="nav-link {% if request.path|slice:'6' == '/produ' %} active{% endif %}"" href="{%url 'products:index'%}">服务与产品</a>
 			  </li>
 			  <li class="nav-item pill-3">
-				<a class="nav-link active" href="{%url 'news:index'%}">新闻动态</a>
+				<a class="nav-link {% if request.path|slice:'5' == '/news' %} active{% endif %}"" href="{%url 'news:index'%}">新闻动态</a>
 			  </li>
 			  <li class="nav-item pill-3">
-				<a class="nav-link active" href="{%url 'contact:index'%}">联系我们</a>
+				<a class="nav-link {% if request.path|slice:'6' == '/conta' %} active{% endif %}"" href="{%url 'contact:index'%}">联系我们</a>
 			  </li>
 			  <li class="nav-item pill-3">
-				<a class="nav-link active" href="{%url 'cases:index'%}">成功案例</a>
+				<a class="nav-link {% if request.path|slice:'6' == '/cases' %} active{% endif %}"" href="{%url 'cases:index'%}">成功案例</a>
 			  </li>
 			  <!-- <li class="nav-item pill-3"> -->
 				<!-- <a class="nav-link" href="#">人才招聘</a> -->
