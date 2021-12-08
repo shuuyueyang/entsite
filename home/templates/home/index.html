@@ -1,5 +1,155 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block page-content %}
-<ul>{{ latest_question_list }}</ul>
+<div class="index-banner banner-pic">
+<div class="container header-banner" style="visibility: visible; padding: 50px 0;">
+        <div class="col-lg-12 text-center" style="visibility: visible; padding: 50px 0;">
+            <h2>选择山月石，网站建设如此简单</h2>
+            <div class="brand-name-subtext">
+                专注为用户提供一站式网站平台解决方案
+            </div>
+            <!-- <div class="content-block" style="margin-top: 20px;"> -->
+                <!-- <a class="radius-btn btn-primary btn-red" data-label="申请使用_首页顶部" category="onboarding" href="/onboarding">申请使用</a> -->
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+<div class="index-products">
+<div class="container">
+                <h3 class="animation-slide-top appear-no-repeat" data-plugin="appear" data-animate="slide-top" data-repeat="false">
+                    专注网站建设七年
+                </h3>
+                <p class="desc animation-fade appear-no-repeat" data-plugin="appear" data-animate="fade" data-repeat="false">
+                    我们做什么？
+                </p>
+				<div class="row">
+				<div class="col-md-3 col-sm-6 zyy-item">
+					<i class="icon fa-laptop" aria-hidden="true">
+                        </i>
+                        <h4>
+                            高端网站定制
+                        </h4>
+                        <p>企业高端网站定制设计<br>彰显品牌形象</p>
+				</div>
+				<div class="col-md-3 col-sm-6 zyy-item">
+					<i class="icon fa-code" aria-hidden="true">
+                        </i>
+                        <h4>
+                            系统软件研发
+                        </h4>
+                        <p>
+                            "拒绝平庸 只出精品"
+                            <br>
+                            捕捉需求、分析设计
+                        </p>
+				</div>
+				<div class="col-md-3 col-sm-6 zyy-item">
+					<i class="icon fa-group" aria-hidden="true">
+                        </i>
+                        <h4>
+                            营销策划推广
+                        </h4>
+                        <p>
+                            "专业团队 超前思维" <br>全方位推广你的品牌和产品
+                        </p>
+				</div>
+				<div class="col-md-3 col-sm-6 zyy-item">
+					<i class="icon fa-refresh" aria-hidden="true">
+                        </i>
+                        <h4>
+                            云服务器运维
+                        </h4>
+                        <p>
+                            "快速响应，贴心服务" <br>呵护你的企业网站健康成长
+                        </p>
+				</div>
+				</div>
+    </div>
+</div>
+<div class="index-cases">
+	<div class="container">
+        <h3 class="animation-slide-top appear-no-repeat" data-plugin="appear" data-animate="slide-top" data-repeat="false">
+                    成功案例
+        </h3>
+		<p class="desc animation-fade appear-no-repeat" data-plugin="appear" data-animate="fade" data-repeat="false">
+			国内优秀的一站式网络服务商
+		</p>
+		<div class="row" style="margin-top:30px">
+			<div class="col-md-3 col-sm-6 case-item">
+				<div class="widget widget-shadow " style="position: relative; left: 0px; top: 0px;">
+								<div class="img-holder" style="height:320px">
+									<img data-original={% static 'picture/1-1609231g6403r.jpg' %} alt="环游旅游公司" src={% static 'picture/1-1609231g6403r.jpg' %} style="">
+									<a href="caseshow.html" title="环游旅游公司" target="_self">
+										<div class="overlay">
+											<div class="inner">
+												<ul class="social">
+													整体效果 以背景大图的视觉张力突显时尚感，整...
+												</ul>
+											</div>
+										</div>
+									</a>
+								</div>
+				  </div>
+			</div>
+			<div class="col-md-3 col-sm-6 case-item">
+				<div class="widget widget-shadow" style="position: relative; left: 0px; top: 0px;">
+								<div class="img-holder" style="height:320px">
+									<img data-original={% static 'picture/1-1609231g5522w.jpg' %}  alt="环游旅游公司" src={% static 'picture/1-1609231g5522w.jpg' %}  style="display: inline;">
+									<a href="caseshow.html" title="环游旅游公司" target="_self">
+										<div class="overlay">
+											<div class="inner">
+												<ul class="social">
+													整体效果 以背景大图的视觉张力突显时尚感，整...
+												</ul>
+											</div>
+										</div>
+									</a>
+								</div>
+				  </div>
+			</div>
+			<div class="col-md-3 col-sm-6 case-item">
+				<div class="widget widget-shadow" style="position: relative; left: 0px; top: 0px;">
+								<div class="img-holder" style="height:320px">
+									<img data-original={% static 'picture/1-1609231f24cq-lp.jpg' %}  alt="环游旅游公司" src={% static 'picture/1-1609231f24cq-lp.jpg' %}  style="display: inline;">
+									<a href="caseshow.html" title="环游旅游公司" target="_self">
+										<div class="overlay">
+											<div class="inner">
+												<ul class="social">
+													整体效果 以背景大图的视觉张力突显时尚感，整...
+												</ul>
+											</div>
+										</div>
+									</a>
+								</div>
+				  </div>
+			</div>
+			<div class="col-md-3 col-sm-6 case-item">
+				<div class="widget widget-shadow" style="position:relative; left: 0px; top: 0px;">
+								<div class="img-holder" style="height:320px">
+									<img data-original={% static 'picture/1-1609231f446492-lp.jpg' %}  alt="环游旅游公司" src={% static 'picture/1-1609231f446492-lp.jpg' %} style="display: inline;">
+									<a href="caseshow.html" title="环游旅游公司" target="_self">
+										<div class="overlay">
+											<div class="inner">
+												<ul class="social">
+													整体效果 以背景大图的视觉张力突显时尚感，整...
+												</ul>
+											</div>
+										</div>
+									</a>
+								</div>
+				  </div>
+			</div>
+		</div>
+    </div>
+</div>
+<div class="index-aboutus">
+	<div class="container">
+		<h3 class="animation-slide-top appear-no-repeat" data-plugin="appear" data-animate="slide-top" data-repeat="false">
+			想要制作高端大气响应式网站，即刻联系我们吧！
+		</h3>
+				<h3 style="margin-bottom:2px;">1360-102-3316</h3>
+
+				<p style="text-align:center;margin: 0">周一至周五 9:00-17:00</p>
+	</div>
+</div>
 {% endblock %}

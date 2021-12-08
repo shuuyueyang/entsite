@@ -1,32 +1,36 @@
 {% extends "base.html" %}
 
 {% block page-content %}
-<div class="location">
+<div class="index-banner banner-pic">
+<div class="container header-banner" style="visibility: visible; padding: 50px 0;">
+        <div class="col-lg-12 text-center" style="visibility: visible; padding: 60px 0;">
+            <h2>关于我们</h2>
+        </div>
+    </div>
+</div>
+<div class="ls-about-body">
 	<div class="container">
-	<div style="margin-top:12px;">
-		<span>当前位置：</span><a>网站首页</a> > <a>关于我们</a> > <a>公司简介</a>
+		<h3 style="margin-bottom:40px;">关于我们</h3>
+
+		<div class="box">
+					<div class="box-left">
+					<p>
+						<span style="color: rgb(89, 89, 89); font-size: 16px;">北京山月石信息技术有限公司是一家网站平台建设及解决方案提供商，成立于2013年，总部位于中国北京。</span>
+					</p>
+	<p>
+		<span style="color: rgb(89, 89, 89); font-size: 16px;">山月石科技汇聚了来自五百强公司的技术人才，利用前沿网站设计开发技术，为企业提供一站式网站平台解决方案，助力企业领先同行。</span>
+	</p>
+<span> </span>
+	<p>
+		</p><p><span style="color: rgb(89, 89, 89); font-size: 16px;">公司团队将专注于网站建设专业领域，专心打造"技术+服务"业务模式，持续为客户提供高质量的产品及服务。</span>
+	</p>
+
+					</div>
+					<div class="box-right"><div id="about-us-picture" style=""></div></div>
+				</div>
+
+              <br>
+
 	</div>
-	</div>
-</div>
-<ul>{{ msg|safe }}</ul>
-<div class="container submenu">
-	<div style="margin-top:15px;">
-		<ul>
-			<li class="on"><a href="#">公司简介</a></li>
-			<li><a href="#">领导致辞</a></li>
-			<li><a href="#">组织架构</a></li>
-			<li><a href="#">企业文化</a></li>		
-		</ul>
-	</div>
-</div>
-<div class="container page-conent">
-	<div class="page-title">
-		<div class="en">
-			about us
-		</div>
-		<div class="cn">
-			关于我们
-		</div>
-	</div>
-</div>
+ </div>
 {% endblock %}

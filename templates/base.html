@@ -4,8 +4,12 @@
 <head>
     <title>山月石网站系统</title>   
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
-    <link href="{% static 'bootstrap460-dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css" /> 
-    <link href="{% static 'sitestyles/site.css' %}" rel="stylesheet" type="text/css" /> 
+    <link href="{% static 'bootstrap460-dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'font-awesome-470/css/font-awesome.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'sitestyles/site.css' %}" rel="stylesheet" type="text/css" />
+
+
+
    <!--	 <link href="{% static 'bootstrap-table/bootstrap-table.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'django_tables2/bootstrap.css' %}" rel="stylesheet" />
 	<link href="{% static 'jquery-ui-1.12.1/jquery-ui.css' %}" rel="stylesheet" type="text/css" /> 
@@ -27,48 +31,85 @@
     {% endblock %}
     <style>
     </style>
+
 </head>
+<body>
+
 {% block navbar_title %}
 {% endblock%}
 {% block banner_part%}
 {% endblock%}
-{{request.path|slice:'6'}}
 <div class="container">
-    <nav class="navbar navbar-expand-md navbar-light bg-light rounded"> <!--   -->
-		<a class="navbar-brand" href="#">Navbar</a>
-		<ul class="nav nav-pills">
-			<li class="nav-item pill-1">
-				<a class="nav-link {% if request.path == '/' %} active{% endif %}"" href="{%url 'home:index'%}">网站首页</a>
-			  </li>
-			  <li class="nav-item pill-1">
-				<a class="nav-link {% if request.path|slice:'6' == '/about' %} active{% endif %}" href="{%url 'about:index'%}">关于我们</a>
-			  </li>
-			  <li class="nav-item pill-2">
-				<a class="nav-link {% if request.path|slice:'6' == '/produ' %} active{% endif %}"" href="{%url 'products:index'%}">服务与产品</a>
-			  </li>
-			  <li class="nav-item pill-3">
-				<a class="nav-link {% if request.path|slice:'5' == '/news' %} active{% endif %}"" href="{%url 'news:index'%}">新闻动态</a>
-			  </li>
-			  <li class="nav-item pill-3">
-				<a class="nav-link {% if request.path|slice:'6' == '/conta' %} active{% endif %}"" href="{%url 'contact:index'%}">联系我们</a>
-			  </li>
-			  <li class="nav-item pill-3">
-				<a class="nav-link {% if request.path|slice:'6' == '/cases' %} active{% endif %}"" href="{%url 'cases:index'%}">成功案例</a>
-			  </li>
-			  <!-- <li class="nav-item pill-3"> -->
-				<!-- <a class="nav-link" href="#">人才招聘</a> -->
-			<!-- </li> -->
-		</ul>
-		<form class="form-inline my-2 my-md-0">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-      </form>
+   <nav class="navbar navbar-expand-lg navbar-light rounded">
+    <a class="navbar-brand" href="#"><img src={% static 'images/logo1.png' %} width="200" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-pills">
+
+          <a class="top-menu nav-link {% if  page_id == 0 %} active {% endif %}" href="/">网站首页</a>
+        </li>
+        <li class="nav-pills ">
+          <a class="top-menu nav-link {% if  page_id == 1 %} active {% endif %}" href="/products/">产品与服务</a>
+        </li>
+		<li class="nav-pills">
+          <a class="top-menu nav-link {% if  page_id == 2 %} active {% endif %}" href="/cases/">成功案例</a>
+        </li>
+		<li class="nav-pills">
+          <a class="top-menu nav-link {% if  page_id == 3 %} active {% endif %}" href="/about/">关于我们</a>
+        </li>
+		<!-- <li class="nav-pills"> -->
+          <!-- <a class="nav-link" href="">联系我们</a> -->
+        <!-- </li> -->
+      </ul>
+      <!-- <form class="form-inline my-2 my-md-0"> -->
+        <!-- <input class="form-control" type="text" placeholder="Search" aria-label="Search"> -->
+      <!-- </form> -->
+    </div>
   </nav>
   {% block page-content %}
   {% endblock %}	
 </div> 
 <div id="footer">
-{% block footer %}
-{% endblock %}
+<footer class="col-sm-12">
+<div class="container">
+            <!--<div class="row hidden-xs">
+                <p>联系我们:</p>
+            </div>-->
+
+            <div class="row">
+                <!--<div class="col-xs-12 col-sm-6 col-md-4 hidden-xs">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <button class="contact no-pointer">
+                                <span class="qg-icon qg-footer-icon fa fa-phone"></span>
+                                <span>{!! trans('footer.phone') !!}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="col-xs-12 col-sm-6 col-md-1 hidden-sm hidden-xs">
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-5">
+                    <p>信息咨询：service@shanyueshi.com</p>
+                    <p>商务合作：business@shanyueshi.com</p>
+                    <p>地址： 北京市朝阳区樱花西街28号楼三层</p>
+                    <p>&nbsp;</p>
+                </div>
+				<div class="col-xs-12 col-sm-6 col-md-5">
+
+                    <p><a href="https://beian.miit.gov.cn/" target="_blank">网站备案号：京ICP备150dd076号</a></p>
+                    <p>Copyright© 2015-2020 北京山月石信息技术有限公司 </p>
+
+                </div>
+            </div>
+			</div>
+</footer>
 </div>
     <script src="{% static 'bootstrap337/js/jquery.min.js' %}"></script>
     <script src="{% static 'layer351/layer.js' %}"></script>
@@ -80,6 +121,37 @@
     <script src="{% static 'jquery-ui-1.12.1/jquery-ui.js' %}"></script> 
     <script src="{% static 'bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.js' %}"></script> 
      <script src="{% static 'jquery-ui-1.12.1/jquery-ui.datepicker-zh-CN.js' %}"></script> -->
+    <script>
+
+$(document).ready(function(){
+/*
+        $(".nav-pills").hover(
+          function () {
+            $(this).addClass("active");
+          },
+          function () {
+            $(this).removeClass("active");
+          }
+        );
+
+*/
+        /* li clicked
+        console.log($this);
+
+        */
+        $(".nav-pills").click(function () {
+                console.log($(this));
+                $(this).addClass("active");
+                $(this).siblings().each(function () {
+                    $(this).removeClass("active");
+                });
+
+            });
+
+
+});
+
+    </script>
 	{% block javascripts %}
 	{% endblock %}
 </body>
