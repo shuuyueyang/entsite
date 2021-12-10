@@ -1,19 +1,39 @@
 {% extends "base.html" %}
 {% load static %}
-{% block page-content %}
-<div class="index-banner banner-pic">
+  {% block banner_part%}
+  <div class="index-banner banner-pic">
 <div class="container header-banner" style="visibility: visible; padding: 50px 0;">
         <div class="col-lg-12 text-center" style="visibility: visible; padding: 60px 0;">
             <h2>产品与服务</h2>
         </div>
     </div>
 </div>
-<div class="ls-about-body">
+  {% endblock%}
+{% block page-content %}
+
+<div class="ls-about-body"> 
 	<div class="container">
-		<h3 style="margin-bottom:40px;">产品与服务</h3>
-
-
-
+		<h3 style="margin-bottom:40px;">企业网站定制</h3>
+		
+     山月石科技网站事业部成立于2019年，多年来，山月石携手强大的建设团队，以过硬的技术、创新的设计、
+一流的服务、全方位的策划致力为企业提供全面的企业网站解决方案，打造优质建站高端品牌。
+            
 	</div>
- </div>
+ </div> 
+ <div class="ls-about-body"> 
+	<div class="container">
+		<h3 style="margin-bottom:40px;">自研网站管理平台</h3>山月石科技具有自行研发的完全自主知识产权的"隼鸟网站内容管理系统"，通过该系统，可以快速的调整网站风格，并通过配置选择所需功能模块，一般3-7天即可完成高质量网站交付。
+	</div>
+ </div> 
+ <div class="ls-about-body"> 
+	<div class="container">
+		<h3 style="margin-bottom:40px;">SEO网站优化</h3>
+		管理后台提供全局SEO简易设定，让SEO优化策略保持一致，提升搜索引擎对网站的采集、收录和排名，让更多客户主动上门。
+	</div>
+ </div> 
+ <div class="ls-about-body"> 
+	<div class="container">
+		<h3 style="margin-bottom:40px;">云服务器运维</h3>山月石科技围绕企业网站建设，提供域名注册、服务器租用、网站运维等全方位服务，用户无需额外投入IT人员成本，省时省力更省心。
+	</div>
+ </div> 
 {% endblock %}

@@ -37,8 +37,7 @@
 
 {% block navbar_title %}
 {% endblock%}
-{% block banner_part%}
-{% endblock%}
+
 <div class="container">
    <nav class="navbar navbar-expand-lg navbar-light rounded">
     <a class="navbar-brand" href="#"><img src={% static 'images/logo1.png' %} width="200" alt=""></a>
@@ -70,9 +69,12 @@
       <!-- </form> -->
     </div>
   </nav>
+</div> 
+  {% block banner_part%}
+  {% endblock%}
   {% block page-content %}
   {% endblock %}	
-</div> 
+
 <div id="footer">
 <footer class="col-sm-12">
 <div class="container">
