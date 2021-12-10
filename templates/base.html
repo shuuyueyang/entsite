@@ -47,18 +47,17 @@
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
-        <li class="nav-pills">
-
-          <a class="top-menu nav-link {% if  page_id == 0 %} active {% endif %}" href="/">网站首页</a>
+        <li class="nav-pills {% if request.path == '/' %} active {% endif %}">
+          <a class="top-menu nav-link " href="/">网站首页</a>
         </li>
-        <li class="nav-pills ">
-          <a class="top-menu nav-link {% if  page_id == 1 %} active {% endif %}" href="/products/">产品与服务</a>
+        <li class="nav-pills {% if request.path|slice:'6' == '/produ' %} active {% endif %}">
+          <a class="top-menu nav-link " href="/products/">产品与服务</a>
         </li>
-		<li class="nav-pills">
-          <a class="top-menu nav-link {% if  page_id == 2 %} active {% endif %}" href="/cases/">成功案例</a>
+		<li class="nav-pills {% if request.path|slice:'6' == '/cases' %} active {% endif %}">
+          <a class="top-menu nav-link " href="/cases/">成功案例</a>
         </li>
-		<li class="nav-pills">
-          <a class="top-menu nav-link {% if  page_id == 3 %} active {% endif %}" href="/about/">关于我们</a>
+		<li class="nav-pills {% if request.path|slice:'6' == '/about' %}  active {% endif %}">
+          <a class="top-menu nav-link " href="/about/">关于我们</a>
         </li>
 		<!-- <li class="nav-pills"> -->
           <!-- <a class="nav-link" href="">联系我们</a> -->
