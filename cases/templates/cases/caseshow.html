@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page-content %}
+<p> {{case.title}} </p>
+
+<img src="{% static case.img_url %}">
+
+<p>{{ case.detail }}</p>
+{% endblock %}
