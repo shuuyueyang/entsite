@@ -8,7 +8,8 @@ class OurCases(models.Model):
     title = models.CharField(max_length=100)
 
     #在成功案例页面所展示的图片的url
-    img_url = models.CharField(max_length=100,default='#')
+    #img_url = models.CharField(max_length=100,default='#')
+    img_url = models.ImageField(upload_to='cases/', blank=True)
 
     #详细信息，页面的一些信息
     detail = models.TextField(max_length=3000)

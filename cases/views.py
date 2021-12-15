@@ -34,7 +34,13 @@ def page(request,page_num=1):
 #根据案例的id返回某个案例
 
 def caseshow(request,case_id=1):
+    '''
+    try:
+        news = News.objects.get(pk=news_id)
+    except News.DoesNotExist:
+        raise Http404("news does not exist")
 
+    '''
     cs=OurCases.objects.filter(id=int(case_id))[0]
 
     context = {

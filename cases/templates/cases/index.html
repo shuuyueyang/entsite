@@ -22,7 +22,7 @@
 			<div class="col-md-3 col-sm-6 case-item">
 				<div class="widget widget-shadow " style="position: relative; left: 0px; top: 0px;">
 								<div class="img-holder" style="height:320px">
-									<img data-original={% static  case.img_url  %} alt={{ case.title }} src={% static  case.img_url  %} style="">
+									<img data-original="/media/{{  case.img_url }}" alt={{ case.title }} src="/media/{{  case.img_url }}" style="">
 									<a href="caseshow/{{ case.id }}" title={{ case.title }} target="_self">
 										<div class="overlay">
 											<div class="inner">
