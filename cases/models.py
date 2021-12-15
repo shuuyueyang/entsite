@@ -9,10 +9,10 @@ class OurCases(models.Model):
 
     #在成功案例页面所展示的图片的url
     #img_url = models.CharField(max_length=100,default='#')
-    img_url = models.ImageField(upload_to='cases/', blank=True)
+    img_url = models.ImageField('图片路径',upload_to='cases/', blank=True)
 
     #是否在首页展示
-    show_home = models.BooleanField(default=False)
+    show_home = models.BooleanField('是否首页显示',default=False)
     #详细信息，页面的一些信息
     detail = models.TextField(max_length=3000)
 
