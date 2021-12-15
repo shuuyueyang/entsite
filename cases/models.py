@@ -11,8 +11,12 @@ class OurCases(models.Model):
     #img_url = models.CharField(max_length=100,default='#')
     img_url = models.ImageField(upload_to='cases/', blank=True)
 
+    #是否在首页展示
+    show_home = models.BooleanField(default=False)
     #详细信息，页面的一些信息
     detail = models.TextField(max_length=3000)
+
+
 
     def __str__(self):
         return self.title

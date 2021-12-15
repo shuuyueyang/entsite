@@ -72,15 +72,18 @@
 			国内优秀的一站式网络服务商
 		</p>
 		<div class="row" style="margin-top:30px">
+
+		{% for case in cases %}
+			{% if forloop.counter0 < 4 %}
 			<div class="col-md-3 col-sm-6 case-item">
 				<div class="widget widget-shadow " style="position: relative; left: 0px; top: 0px;">
 								<div class="img-holder" style="height:320px">
-									<img data-original={% static 'picture/1-1609231g6403r.jpg' %} alt="环游旅游公司" src={% static 'picture/1-1609231g6403r.jpg' %} style="">
-									<a href="caseshow.html" title="环游旅游公司" target="_self">
+									<img data-original="/media/{{  case.img_url }}" alt={{ case.title }} src="/media/{{  case.img_url }}" style="">
+									<a href="caseshow/{{ case.id }}" title={{ case.title }} target="_self">
 										<div class="overlay">
 											<div class="inner">
 												<ul class="social">
-													整体效果 以背景大图的视觉张力突显时尚感，整...
+													{{ case.detail }}
 												</ul>
 											</div>
 										</div>
@@ -88,54 +91,10 @@
 								</div>
 				  </div>
 			</div>
-			<div class="col-md-3 col-sm-6 case-item">
-				<div class="widget widget-shadow" style="position: relative; left: 0px; top: 0px;">
-								<div class="img-holder" style="height:320px">
-									<img data-original={% static 'picture/1-1609231g5522w.jpg' %}  alt="环游旅游公司" src={% static 'picture/1-1609231g5522w.jpg' %}  style="display: inline;">
-									<a href="caseshow.html" title="环游旅游公司" target="_self">
-										<div class="overlay">
-											<div class="inner">
-												<ul class="social">
-													整体效果 以背景大图的视觉张力突显时尚感，整...
-												</ul>
-											</div>
-										</div>
-									</a>
-								</div>
-				  </div>
-			</div>
-			<div class="col-md-3 col-sm-6 case-item">
-				<div class="widget widget-shadow" style="position: relative; left: 0px; top: 0px;">
-								<div class="img-holder" style="height:320px">
-									<img data-original={% static 'picture/1-1609231f24cq-lp.jpg' %}  alt="环游旅游公司" src={% static 'picture/1-1609231f24cq-lp.jpg' %}  style="display: inline;">
-									<a href="caseshow.html" title="环游旅游公司" target="_self">
-										<div class="overlay">
-											<div class="inner">
-												<ul class="social">
-													整体效果 以背景大图的视觉张力突显时尚感，整...
-												</ul>
-											</div>
-										</div>
-									</a>
-								</div>
-				  </div>
-			</div>
-			<div class="col-md-3 col-sm-6 case-item">
-				<div class="widget widget-shadow" style="position:relative; left: 0px; top: 0px;">
-								<div class="img-holder" style="height:320px">
-									<img data-original={% static 'picture/1-1609231f446492-lp.jpg' %}  alt="环游旅游公司" src={% static 'picture/1-1609231f446492-lp.jpg' %} style="display: inline;">
-									<a href="caseshow.html" title="环游旅游公司" target="_self">
-										<div class="overlay">
-											<div class="inner">
-												<ul class="social">
-													整体效果 以背景大图的视觉张力突显时尚感，整...
-												</ul>
-											</div>
-										</div>
-									</a>
-								</div>
-				  </div>
-			</div>
+			{% endif %}
+
+		{% endfor %}
+
 		</div>
     </div>
 </div>
