@@ -211,6 +211,7 @@ ul {
 	padding-top:5px;
 	padding-bottom:40px;
 }
+.caseshow h3,
 .index-cases h3 {
     text-align: center;
     font-weight: 300;
@@ -496,4 +497,7 @@ footer>.row>div>p>a:hover {
 .page-line-dash {
     height: 1px;
     background-image: url("../images/page-line-dash.gif");
+}
+.caseshow {
+    margin-top: 30px;
 }
