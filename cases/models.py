@@ -1,6 +1,8 @@
 from django.db import models
 from common.models import MetaData
 
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import  RichTextUploadingField
 
 # Create your models here.
 class OurCases(models.Model):
@@ -13,10 +15,12 @@ class OurCases(models.Model):
 
     #是否在首页展示
     show_home = models.BooleanField('是否首页显示',default=False)
+    
     #详细信息，页面的一些信息
     detail = models.TextField(max_length=3000)
-
-
+    
+    #富文本信息
+    content = RichTextUploadingField()
 
     def __str__(self):
         return self.title
