@@ -13,4 +13,5 @@ urlpatterns = [
 
     #成功案例详情页
     path('caseshow/<int:case_id>',views.caseshow, name='detail_page'),
+
 ]

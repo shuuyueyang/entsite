@@ -20,7 +20,11 @@ from django.conf.urls.static import static
 from  django.views.static import serve
 from .settings import MEDIA_ROOT
 
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import sitemaps
+
 urlpatterns = [
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
     path('', include('home.urls')),
     path('cases/', include('cases.urls')),
     path('contact/', include('contact.urls')),
